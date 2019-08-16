@@ -1,0 +1,21 @@
+# In command prompt type "pip install opencv-python"
+# First import open source Computer Vision library
+import cv2 
+# Select the camera source. '0' is for inbuilt camera and '1' for external camera modules
+cap = cv2.VideoCapture(0)
+
+while(True):
+    # Capture frame-by-frame
+    ret, frame = cap.read()
+
+    # Display the resulting frame
+    cv2.imshow('frame',frame)
+    
+    # To close the frame window, we have defined 'q' key in keyboard, by pressing it will close the frame window
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+# Finally to release the capture (frame-by-frame)
+cap.release()
+# To close all the windows (console)
+cv2.destroyAllWindows()
